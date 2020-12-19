@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<script src="js/jquery-3.5.0.min.js"></script>
+<script src="js/register.js"></script>
+</head>
+<body>
+
+
+<p><select id="province" name="provinceCode">
+	<option value="">请选择省份</option>
+</select>
+<span id="auth_err" id="provinceError"></span>
+</p>
+
+<p>
+<select id="city" name="cityCode">
+<option value="">请选择城市</option>
+<span class="auth_err" id="cityError"></span>
+</select>
+</p>
+
+
+</body>
+</html>
+
+function fillProvince(){
+	$.ajax({
+		type:"post",
+		url:"queryProvinceCity.do",
+		data:{}.
+		dataType:"json",
+		success:function(response){
+			var provinceElement = document.getElementById("province");
+			provinceElement.options.length = 0;
+			provinceElement.add(new Option("请选择省份",""));
+			for(index = 0;index < response.length;index++){
+				provinceElement.add(new Option(response[index].provinceName,response[index].provinceCode));	
+			}
+		}
+	});
+}
+
+
+$(document).ready(funtion(){
+	$("#city").empty();
+	$("$city").append($("<option>").val("").text("请选择城市"));
+	if($(this).val()==""){
+		$("#provinceError").css("color","#c00202");
+		$("#provinceError").text("必须选择省份");
+		return;
+	}
+	province_correct = true;
+	$("#provinceError").text("");
+	var provinceCode = $("#province").val();
+	$.ajax({
+	type:"post",
+	url:"queryProvinceCity.do",
+	data:{provinceCode:provinceCode},
+	dataType:"json",
+	success:function(response){
+		for(index = 0;index < response.length;index++){
+			var option = $("<option>").val(response[index].cityCode).text(response[index].cityName);
+			$("#city").append(option);
+		}
+	}
+	
+	});
+	
+
+});
+
+
+

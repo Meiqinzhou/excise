@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>excise</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+
+  
+</web-app>
+
+<filter>
+	<description>FilterDemo02 过滤器</description>
+	<filter-name>FilterDemo02</filter-name>
+	<filter-class>me.gacl.web.filter.FilterDemo02</filter-class>
+	<init-param>
+	<description>配置FilterDemo02 过滤器的初始化参数</description>
+	<param-name>name</param-name>
+	<param-value>gacl</param-value>
+	<param-name>like</param-name>
+	<param-value>java</param-value>
+	</init-param>
+
+</filter>
+
+<filter-mapping>
+	<filter-name>FilterDemo02</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<filter>
+	<filter-name>permissionCheckFilter</filter-name>
+	<filter-class>filter.PermissionFilter</filter-class>
+	<init-param>
+		<param-name>notCheckUri</param-name>
+		<param-value>/createVerifyImage.do,/login.do,/logout.do,/error.jsp</param-value>
+		
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>permissionCheckFilter</filter-name>
+	<url-pattern>*.jsp</url-pattern>
+	<url-pattern>*.do</url-pattern>
+</filter-mapping>

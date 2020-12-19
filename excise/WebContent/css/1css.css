@@ -1,0 +1,94 @@
+*{
+    border: 0px;
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+    text-decoration: none;
+}
+header{
+    border-bottom:1px solid #777777;
+}
+.left{
+    padding-left: 100px;
+    padding-top:10px;
+}
+.kk{
+    border: 1px solid #777777;
+}
+.right{
+    float: right;
+    height: 30px;
+    padding-right: 100px;
+    padding-top:5px;
+}
+.right img{
+    height:11px;
+}
+.zt {
+    font-size:8px;
+    padding:1px;
+
+}
+.z_left{
+    float: left;
+    padding-top: 50px;
+    padding-left: 200px;
+}
+.z_right{
+    padding-top: 50px;
+    padding-left:900px;
+}
+.z_right span a{
+    padding-left:50px;
+}
+.yong_hu,.mi_ma{
+   height:30px;
+    width:200px;
+
+}
+form img{
+    padding-right:10px;
+    padding-top: 10px;
+}
+.ot{
+    height:50px;
+    width:300px;
+    border: 1px solid #aaaaaa;
+
+    margin-bottom: 10px;
+}
+.gou{
+    padding-right:420px;
+    width:300px;
+    /*border: 1px solid red;*/
+}
+.gou span{
+    padding-left: 0px;
+}
+.gou a{
+    padding-left:100px;
+}
+button{
+    height:60px;
+    width: 300px;
+    background-color: red;
+}
+.but{
+    padding-right:300px;
+}
+ul li {
+   float: left;
+    height: 100px;
+}
+ul{
+    overflow: hidden;
+}
+ul li img{
+
+}
+ul li img:hover{
+    background-color:orange;
+}
+footer{
+    text-align: center;
+}
